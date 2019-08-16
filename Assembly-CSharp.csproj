@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\ParalaxBG.cs" />
     <Compile Include="Assets\Scripts\PlayerControll.cs" />
     <Compile Include="Assets\Scripts\Powerups.cs" />
+    <Compile Include="Assets\Scripts\ProjetilArrow.cs" />
     <Compile Include="Assets\Scripts\SpawnEnemys.cs" />
     <Compile Include="Assets\Scripts\SwordHitbox.cs" />
     <Compile Include="Assets\Scripts\UI_Play.cs" />

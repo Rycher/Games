@@ -22,13 +22,18 @@ public class PlayerControll : MonoBehaviour
     private float waitTime = 1.0f;
     [SerializeField]
     GameObject Sword;
+    [SerializeField]
+    GameObject Arrow;
     private AudioSource aSource;
     [SerializeField]
     private AudioClip aImpact;
     [SerializeField]
     private AudioClip aAtack;
     [SerializeField]
-    private AudioClip aJump;
+    private AudioClip aJump;    
+
+    delegate void MultiDelegate();
+    MultiDelegate myMultiDelegate;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +45,8 @@ public class PlayerControll : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {       
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Debug.Log("Espada");
@@ -70,9 +76,18 @@ public class PlayerControll : MonoBehaviour
     //Function called from third frame at attack animation
     void HitBox()
     {
-        GameObject swhitbox = GameObject.Find("SwHitbox");        
-        swhitbox.GetComponent<CircleCollider2D>().enabled = true;
-        aSource.PlayOneShot(aAtack, 1f);
+        
+        if (GetComponent<Animator>().GetInteger("ArmaEquip") == 0) 
+        {
+            GameObject swhitbox = GameObject.Find("SwHitbox");
+            swhitbox.GetComponent<CircleCollider2D>().enabled = true;
+            aSource.PlayOneShot(aAtack, 1f);
+        }
+        else
+        {
+           Instantiate(Arrow, Player.transform.position + new Vector3(1,0,0), Quaternion.Euler(0, 0, 0));          
+        }
+
     }
 
     //Testando Git PUSH  

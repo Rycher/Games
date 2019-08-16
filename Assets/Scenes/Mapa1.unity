@@ -3973,6 +3973,7 @@ MonoBehaviour:
   _speed: 0
   Plataforma: {fileID: 243465665}
   Sword: {fileID: 480909650}
+  Arrow: {fileID: 1257368323418027809, guid: b575cdf6e627c314e977aba71a4fd517, type: 3}
   aImpact: {fileID: 8300000, guid: 7eabc5add2a51a1409713195fabd4f53, type: 3}
   aAtack: {fileID: 8300000, guid: 3f2cd4a5f59492148aeacd3296def84f, type: 3}
   aJump: {fileID: 8300000, guid: 593c90d5e77f29a4595381286640a910, type: 3}
@@ -23657,6 +23658,7 @@ MonoBehaviour:
   _speed: 0
   Plataforma: {fileID: 243465665}
   Sword: {fileID: 0}
+  Arrow: {fileID: 0}
   aImpact: {fileID: 0}
   aAtack: {fileID: 0}
   aJump: {fileID: 0}

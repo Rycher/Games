@@ -27,10 +27,26 @@ public class EnemySentinel : MonoBehaviour
             if (gameObject.transform.position.x == posInic.x)
             {
                 exitP = false;
+                if (transform.position.x < posInic.x)
+                {
+                    GetComponent<SpriteRenderer>().flipX = true;
+                }
+                else
+                {
+                    GetComponent<SpriteRenderer>().flipX = false;
+                }
             }
 
             if (exitP == true)
             {
+                if (transform.position.x < posInic.x)
+                {
+                    GetComponent<SpriteRenderer>().flipX = true;
+                }
+                else
+                {
+                    GetComponent<SpriteRenderer>().flipX = false;
+                }               
                 this.transform.position = Vector2.MoveTowards(this.transform.position, posInic, 1 * Time.deltaTime);
             }
             else
@@ -57,7 +73,6 @@ public class EnemySentinel : MonoBehaviour
             Debug.Log("Inverter posição");
             if (gameObject.GetInstanceID() == Enemyid)
             {
-
                 if (transform.eulerAngles.y == 180)
                 {
                     transform.eulerAngles = new Vector3(0, 0, 0);
@@ -66,14 +81,7 @@ public class EnemySentinel : MonoBehaviour
                 {
                     transform.eulerAngles = new Vector3(0, -180, 0);
                 }
-
-                //transform.eulerAngles = new Vector3(0, -180, 0);
-
-
-                //iSentinelArea = 0;
             }
-
-
         }
 
         if (collision.gameObject.name == "Player")

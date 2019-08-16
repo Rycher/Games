@@ -13,10 +13,5 @@ public class SpawnEnemys : MonoBehaviour
     {
         Instantiate(enemy, spawnPoint);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }
