@@ -18,7 +18,7 @@ public class ProjetilArrow : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //int arrowid = gameObject.GetInstanceID();
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(this.gameObject);

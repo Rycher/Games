@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Arma
   - PowerUpL
+  - Arrow
   layers:
   - Default
   - TransparentFX

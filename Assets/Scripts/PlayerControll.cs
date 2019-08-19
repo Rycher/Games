@@ -30,8 +30,8 @@ public class PlayerControll : MonoBehaviour
     [SerializeField]
     private AudioClip aAtack;
     [SerializeField]
-    private AudioClip aJump;    
-
+    private AudioClip aJump;
+    GameObject swhitbox = GameObject.Find("SwHitbox");
     delegate void MultiDelegate();
     MultiDelegate myMultiDelegate;
 
@@ -79,13 +79,15 @@ public class PlayerControll : MonoBehaviour
         
         if (GetComponent<Animator>().GetInteger("ArmaEquip") == 0) 
         {
-            GameObject swhitbox = GameObject.Find("SwHitbox");
+            //GameObject swhitbox = GameObject.Find("SwHitbox");
             swhitbox.GetComponent<CircleCollider2D>().enabled = true;
             aSource.PlayOneShot(aAtack, 1f);
         }
         else
         {
-           Instantiate(Arrow, Player.transform.position + new Vector3(1,0,0), Quaternion.Euler(0, 0, 0));          
+           
+           Instantiate(Arrow, Player.transform.position + new Vector3(1,0,0), Quaternion.Euler(0, 0, 0));
+           Instantiate(Arrow, swhitbox.transform.position, Quaternion.Euler(0, 0, 0));
         }
 
     }
@@ -178,8 +180,7 @@ public class PlayerControll : MonoBehaviour
             //GameObject swhitbox = GameObject.Find("SwHitbox");     
             swhitbox.GetComponent<CircleCollider2D>().enabled = false;            
             Player.GetComponent<Animator>().SetBool("Attack", false);
-        }
-        
+        }        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

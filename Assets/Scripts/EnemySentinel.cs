@@ -67,10 +67,10 @@ public class EnemySentinel : MonoBehaviour
     {
         if (collision.gameObject.name == "SentinelArea")
         {
-            Debug.Log("Saiu do trigger");
+            //Debug.Log("Saiu do trigger");
             iSentinelArea = 1;
             Enemyid = this.gameObject.GetInstanceID();
-            Debug.Log("Inverter posição");
+            //Debug.Log("Inverter posição");
             if (gameObject.GetInstanceID() == Enemyid)
             {
                 if (transform.eulerAngles.y == 180)

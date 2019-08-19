@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CamControl.cs" />
     <Compile Include="Assets\Scripts\ControlJump.cs" />
+    <Compile Include="Assets\Scripts\DelArrow.cs" />
     <Compile Include="Assets\Scripts\EnemyH_RE.cs" />
     <Compile Include="Assets\Scripts\EnemyH_UD.cs" />
     <Compile Include="Assets\Scripts\EnemyIA_RE.cs" />
