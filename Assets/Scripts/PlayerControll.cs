@@ -31,7 +31,7 @@ public class PlayerControll : MonoBehaviour
     private AudioClip aAtack;
     [SerializeField]
     private AudioClip aJump;
-    GameObject swhitbox = GameObject.Find("SwHitbox");
+    GameObject swhitbox;
     delegate void MultiDelegate();
     MultiDelegate myMultiDelegate;
 
@@ -77,17 +77,18 @@ public class PlayerControll : MonoBehaviour
     void HitBox()
     {
         
-        if (GetComponent<Animator>().GetInteger("ArmaEquip") == 0) 
+        if (GetComponent<Animator>().GetInteger("ArmaEquip") == 0)
         {
+            swhitbox = GameObject.Find("SwHitbox");
             //GameObject swhitbox = GameObject.Find("SwHitbox");
             swhitbox.GetComponent<CircleCollider2D>().enabled = true;
             aSource.PlayOneShot(aAtack, 1f);
         }
         else
         {
-           
-           Instantiate(Arrow, Player.transform.position + new Vector3(1,0,0), Quaternion.Euler(0, 0, 0));
-           Instantiate(Arrow, swhitbox.transform.position, Quaternion.Euler(0, 0, 0));
+            swhitbox = GameObject.Find("SwHitbox");
+            //Instantiate(Arrow, Player.transform.position + new Vector3(1,0,0), Quaternion.Euler(0, 0, 0));
+            Instantiate(Arrow, swhitbox.transform.position, Quaternion.Euler(0, 0, 0));
         }
 
     }

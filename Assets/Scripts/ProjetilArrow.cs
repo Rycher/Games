@@ -4,16 +4,28 @@ using UnityEngine;
 
 public class ProjetilArrow : MonoBehaviour
 {
+    private Vector2 posw;
+    private Vector2 posPlayer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        posw = GameObject.Find("SwHitbox").transform.position;
+        posPlayer = GameObject.Find("Player").transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.right * 15 * Time.deltaTime);
+       
+        if (posw.x < posPlayer.x)
+        {
+            transform.Translate(Vector3.left * 20 * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(Vector3.right * 20 * Time.deltaTime);            
+        }
+       
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
