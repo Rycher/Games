@@ -47,16 +47,16 @@ public class EnemySentinel : MonoBehaviour
                 {
                     GetComponent<SpriteRenderer>().flipX = false;
                 }               
-                this.transform.position = Vector2.MoveTowards(this.transform.position, posInic, 1 * Time.deltaTime);
+                this.transform.position = Vector2.MoveTowards(this.transform.position, posInic, 2 * Time.deltaTime);
             }
             else
             {
-                transform.Translate(Vector2.left * speed * Time.deltaTime);
+                transform.Translate(Vector2.left * 1 * Time.deltaTime);
             }
         }
         else
         {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            transform.Translate(Vector2.left * 1 * Time.deltaTime);
         }
         // groundInfo = Physics2D.Raycast(groundDetection.position,Vector2.down, distance);     
 

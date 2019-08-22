@@ -27,7 +27,7 @@ public class EnemyIA_RE : MonoBehaviour
         if (collision.tag == "Player")
         {
             Range = 0;
-            this.transform.position = Vector2.MoveTowards(this.transform.position, target.position, 2 * Time.deltaTime);
+            this.transform.position = Vector2.MoveTowards(this.transform.position, target.position, 0.5f * Time.deltaTime);
 
             if (this.transform.position.x < target.transform.position.x)
             {

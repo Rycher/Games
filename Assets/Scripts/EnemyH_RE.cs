@@ -7,7 +7,7 @@ public class EnemyH_RE : MonoBehaviour
     [SerializeField]
     Transform LifeBar;
     [SerializeField]
-    public float ValLife = 0.5f;
+    public float ValLife ;
     // Start is called before the first frame update
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -15,9 +15,9 @@ public class EnemyH_RE : MonoBehaviour
         if (collision.gameObject.tag == "Arma")
         {
             
-            LifeBar.transform.position = new Vector3(LifeBar.transform.position.x, LifeBar.transform.position.y - 0.25f, LifeBar.transform.position.z);
-            LifeBar.localScale = new Vector3(LifeBar.localScale.x, LifeBar.localScale.y - 0.5f, LifeBar.localScale.z);
-            ValLife = LifeBar.localScale.y;
+            LifeBar.transform.position = new Vector3(LifeBar.transform.position.x - 0.12f, LifeBar.transform.position.y , LifeBar.transform.position.z);
+            LifeBar.localScale = new Vector3(LifeBar.localScale.x - 0.2f, LifeBar.localScale.y , LifeBar.localScale.z);
+            ValLife = LifeBar.localScale.x;
             if (ValLife <= 0)
             {
                 Destroy(this.gameObject);
